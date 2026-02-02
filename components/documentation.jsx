@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import { motion } from 'framer-motion';
 
@@ -8,7 +8,7 @@ export default function Documentation() {
   const [user, setUser] = useState(null);
 
   // Check for user on mount
-  useState(() => {
+  useEffect(() => {
     const userData = localStorage.getItem('user');
     if (userData) {
       setUser(JSON.parse(userData));
